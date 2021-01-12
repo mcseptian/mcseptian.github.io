@@ -1,0 +1,20 @@
+image: node:lts-alpine3.12
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - test -e package.json && npm install
+
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public/{css,js,layouts,pages,posts}
+    - npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
