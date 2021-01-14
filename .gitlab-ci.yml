@@ -10,8 +10,8 @@ before_script:
 pages:
   stage: deploy
   script:
-    - mkdir -p public/{css,js,layouts,pages,posts}
     - npm run build
+    - mv _sites public
   artifacts:
     paths:
       - public

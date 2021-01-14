@@ -9,10 +9,6 @@
 *.log
 # Directory for component built
 public
-data/*.js
-data/*.json
-dist
-logs
 # Dependency directory
 node_modules
 node_modules/*
