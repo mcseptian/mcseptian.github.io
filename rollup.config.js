@@ -7,7 +7,9 @@ import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
 import css from "rollup-plugin-css-only";
 import { generateSW } from "rollup-plugin-workbox";
-import preprocessOptions from "./svelte.config";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -49,6 +51,25 @@ export default {
       preprocess: sveltePreprocess({
         sourceMap: !production,
         postcss: true,
+        replace: [
+          [
+            /process\.env\.(\w+)/g,
+            (_, prop) => JSON.stringify(process.env[prop]),
+          ],
+          // blade-like syntax:support
+          [/@if\s*\((.*?)\)$/gim, "{#if $1}"],
+          [/@elseif\s*\((.*?)\)$/gim, "{:else if $1}"],
+          [/@else$/gim, "{:else}"],
+          [/@endif$/gim, "{/if}"],
+          [/@each\s*\((.*?)\)$/gim, "{#each $1}"],
+          [/@endeach$/gim, "{/each}"],
+          [/@await\s*\((.*?)\)$/gim, "{#await $1}"],
+          [/@then\s*(?:\((.*?)\))?$/gim, "{:then $1}"],
+          [/@catch\s*(?:\((.*?)\))?$/gim, "{:catch $1}"],
+          [/@endawait$/gim, "{/await}"],
+          [/@debug\s*\((.*?)\)$/gim, "{@debug $1}"],
+          [/@html\s*\((.*?)\)$/gim, "{@html $1}"],
+        ],
       }),
       compilerOptions: {
         // enable run-time checks when not in production
@@ -73,6 +94,7 @@ export default {
       sourceMap: production,
       inlineSources: production,
     }),
+
     // generate service worker automatically, details:
     // https://developers.google.com/web/tools/workbox/modules/workbox-build#generatesw_mode
     generateSW({
