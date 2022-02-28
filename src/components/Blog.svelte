@@ -10,7 +10,7 @@
   );
 </script>
 
-<div id="blog-wrapper">
+<div id="blog-wrapper" class="container">
   {#if $queryResult.isLoading}
     <CardPlaceholder />
   {:else if $queryResult.error}
