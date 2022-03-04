@@ -1,5 +1,7 @@
 /node_modules/
 /public/build/
+/public/sw.*
+/public/workbox-*.*
 
 .DS_Store
 .env

@@ -98,7 +98,7 @@ export default {
     // generate service worker automatically, details:
     // https://developers.google.com/web/tools/workbox/modules/workbox-build#generatesw_mode
     generateSW({
-      swDest: "public/build/sw.js",
+      swDest: "public/sw.js",
       globDirectory: "public/",
     }),
 
