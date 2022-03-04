@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SocialIcons } from "./Footer.svelte";
 
-  export let icons: SocialIcons[];
+  export let icons: SocialIcons[] = [];
 </script>
 
 <footer

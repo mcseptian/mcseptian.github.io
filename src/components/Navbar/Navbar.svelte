@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  export let name: string;
   let buttonClose = false;
 
   /**
@@ -17,8 +18,8 @@
           class="flex items-center justify-between py-4"
           class:active={buttonClose}
         >
-          <a class="navbar-brand mr-5" href="index.html">
-            <img src="logo.png" alt="Logo" class="h-10 w-10" />
+          <a class="navbar-brand mr-5" href="/">
+            <img src="logo.png" alt={name} class="h-10 w-10" />
           </a>
           <button
             class="block navbar-toggler focus:outline-none lg:hidden"
@@ -40,6 +41,7 @@
             <ul
               id="nav"
               class="items-center content-start mr-auto lg:justify-end lg:flex"
+              on:click={handleClick}
             >
               <li class="nav-item ml-5 lg:ml-11">
                 <a class="mb-5" href="/">Home</a>
@@ -55,13 +57,13 @@
   </div>
 </header>
 
-<style>
+<style lang="postcss">
   .active .toggler-icon:nth-child(2) {
     opacity: 0;
   }
   .toggler-icon {
-    background-color: rgba(56, 66, 77, 1);
     @apply block relative;
+    background-color: rgba(56, 66, 77, 1);
     transition-duration: 300ms;
     height: 2px;
     width: 30px;

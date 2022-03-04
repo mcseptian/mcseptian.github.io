@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Route } from "svelte-router-spa";
-  import Navbar from "../components/Navbar.svelte";
-  import Footer from "../components/Footer.svelte";
+  import Navbar from "../components/Navbar";
+  import Footer from "../components/Footer";
+
   export let currentRoute;
   export let params = {};
   export let socialIcons = [

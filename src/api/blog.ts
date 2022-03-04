@@ -1,4 +1,4 @@
-import type { ArticleList } from "../components/Blog.svelte";
+import type { ArticleList } from "../components/Blog/Blog.svelte";
 
 const baseURI =
   "https://www.googleapis.com/blogger/v3/blogs/3668625331368011796/";

@@ -1,9 +1,9 @@
 <script type="ts">
   import { useQuery } from "@sveltestack/svelte-query";
-  import { getPost } from "../api/blog";
-  import CardPlaceholder from "./CardPlaceholder.svelte";
-  import Card from "./Card.svelte";
-  import type { ArticleList } from "./Blog.svelte";
+  import { getPost } from "../../api/blog";
+  import CardPlaceholder from "../Placeholder/CardPlaceholder.svelte";
+  import Card from "../Card/Card.svelte";
+  import type ArticleList from "./Blog.svelte";
 
   const queryResult = useQuery<unknown, Error, ArticleList>("posts", () =>
     getPost({ key: process.env.BLOGGER_KEY })

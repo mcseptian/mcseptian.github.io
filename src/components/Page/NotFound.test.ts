@@ -6,5 +6,5 @@ test("have home link on render", () => {
   const { getByRole } = render(NotFound);
   const anchor = getByRole("link");
 
-  expect(anchor).toHaveTextContent("HOME");
+  expect(anchor).toHaveTextContent("Home");
 });

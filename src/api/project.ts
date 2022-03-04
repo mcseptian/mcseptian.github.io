@@ -1,5 +1,3 @@
-import { get_spread_object } from "svelte/internal";
-
 const baseURI = "https://api.github.com/users/mcseptian/";
 
 /**

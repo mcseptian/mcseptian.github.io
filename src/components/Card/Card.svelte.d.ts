@@ -1,5 +1,9 @@
 import { SvelteComponentTyped } from "svelte";
 
+export interface CardProps {
+  article: Article;
+}
+
 export interface Article {
   kind: string;
   id: string;
@@ -49,7 +53,7 @@ export interface CardSlots {
 }
 
 export default class Card extends SvelteComponentTyped<
-  Article,
+  CardProps,
   CardEvents,
   CardSlots
 > {}

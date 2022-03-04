@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Article } from "./Card.svelte";
+
   export let article: Article;
 </script>
 

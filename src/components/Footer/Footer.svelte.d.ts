@@ -1,5 +1,9 @@
 import { SvelteComponentTyped } from "svelte";
 
+export interface FooterProps {
+  icons: SocialIcons[];
+}
+
 export interface SocialIcons {
   kind: string;
   url: string;
@@ -18,7 +22,7 @@ export interface FooterSlots {
 }
 
 export default class Footer extends SvelteComponentTyped<
-  Article,
+  FooterProps,
   FooterEvents,
   FooterSlots
 > {}

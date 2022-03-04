@@ -1,4 +1,5 @@
 import { SvelteComponentTyped } from "svelte";
+import type { Article } from "../Card/Card.svelte";
 
 export interface ArticleList {
   kind: string;
@@ -17,8 +18,4 @@ export interface BlogSlots {
   named: { slotValue: string };
 }
 
-export default class Blog extends SvelteComponentTyped<
-  ArticleList,
-  BlogEvents,
-  BlogSlots
-> {}
+export default class Blog extends SvelteComponentTyped<BlogEvents, BlogSlots> {}

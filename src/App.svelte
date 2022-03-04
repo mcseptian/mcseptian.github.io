@@ -9,7 +9,7 @@
 </script>
 
 <QueryClientProvider client={queryClient}>
-  <Router { routes } />
+  <Router {routes} />
 </QueryClientProvider>
 
 <style global lang="postcss">
