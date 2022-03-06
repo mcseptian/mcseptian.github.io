@@ -1,7 +1,6 @@
-import Index from "../components/Page/Index.svelte";
-import Blog from "../components/Blog/Blog.svelte";
-import NotFound from "../components/Page/NotFound.svelte";
-import MainLayout from "../layout/MainLayout.svelte";
+import { Index, NotFound } from "../components/Page";
+import Blog from "../components/Blog";
+import MainLayout from "../layout";
 
 const routes = [
   {
