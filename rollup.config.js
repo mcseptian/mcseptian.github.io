@@ -8,6 +8,7 @@ import typescript from "@rollup/plugin-typescript";
 import css from "rollup-plugin-css-only";
 import { generateSW } from "rollup-plugin-workbox";
 import dotenv from "dotenv";
+import del from 'rollup-plugin-delete'
 
 dotenv.config();
 
@@ -47,6 +48,7 @@ export default {
     file: "public/build/bundle.js",
   },
   plugins: [
+    production && del({ targets: 'public/build/*' }),
     svelte({
       preprocess: sveltePreprocess({
         sourceMap: !production,
