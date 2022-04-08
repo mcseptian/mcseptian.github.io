@@ -16,10 +16,8 @@
   ];
 </script>
 
-<div>
-  <Navbar name="ian" />
-  <main class="container flex h-full w-full flex-grow mx-auto">
-    <Route {currentRoute} {params} />
-  </main>
-  <Footer icons={socialIcons} />
-</div>
+<Navbar name="ian" />
+<main class="container flex h-full w-full flex-grow mx-auto">
+  <Route {currentRoute} {params} />
+</main>
+<Footer icons={socialIcons} />

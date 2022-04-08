@@ -34,9 +34,9 @@
             <span class="toggler-icon" />
           </button>
           <div
-            class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
+            class="absolute left-0 right-0 z-20 hidden px-5 py-3 duration-300 bg-white lg:w-auto lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
             class:hidden={!buttonClose}
-            class:ml-7={buttonClose}
+            class:w-full={buttonClose}
           >
             <ul
               id="nav"
@@ -87,5 +87,8 @@
   .active .toggler-icon:nth-child(3) {
     top: -8px;
     transform: rotate(135deg);
+  }
+  .navbar {
+    @apply px-2
   }
 </style>

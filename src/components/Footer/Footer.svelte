@@ -5,7 +5,7 @@
 </script>
 
 <footer
-  class="container mx-auto pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between"
+  class="container px-2 pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between"
 >
   <div class="pt-4 mx-3 text-center">
     {#if icons.length !== 0}
